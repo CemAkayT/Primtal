@@ -23,16 +23,16 @@ public class Sieve {
     public static List<Integer> sieve(int max){
         List<Integer> primes = new LinkedList<>();
 
-        List<Integer> numers = new LinkedList<>(); // add all numbers from 2 to max to the list
+        List<Integer> numbers = new LinkedList<>(); // add all numbers from 2 to max to the list
         for (int i = 2; i <= max ; i++) {
-            numers.add(i);
+            numbers.add(i);
         }
 
-        while (!numers.isEmpty()){
-            int front = numers.remove(0); // remove a prime number from the front of the list
+        while (!numbers.isEmpty()){
+            int front = numbers.remove(0); // remove a prime number from the front of the list
             primes.add(front);
 
-            Iterator<Integer> itr = numers.iterator(); // remove all multiples of this prime number
+            Iterator<Integer> itr = numbers.iterator(); // remove all multiples of this prime number
             while (itr.hasNext()){
                 int current = itr.next();
                 if (current % front == 0){
